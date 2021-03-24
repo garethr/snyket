@@ -5,7 +5,7 @@ ADD . /go/src/app
 
 RUN CGO_ENABLED=0 go build -o /go/bin/snyket
 
-FROM debian:10.4
+FROM debian:latest
 EXPOSE 8080
 COPY --from=build-env /go/bin/snyket /usr/bin/snyket
 CMD ["/usr/bin/snyket"]
